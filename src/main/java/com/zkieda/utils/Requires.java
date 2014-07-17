@@ -3,6 +3,7 @@ package com.zkieda.utils;
 import java.util.Objects;
 
 import com.google.common.base.Preconditions;
+import com.zkieda.utils.tostring.ToStringMapHelper;
 
 public final class Requires {
 	private Requires(){}
@@ -32,5 +33,20 @@ public final class Requires {
 	}
 	public static void that(boolean expr){
 		Preconditions.checkArgument(expr);
+	}
+	public static void that(boolean expr, Object errmessage){
+		Preconditions.checkArgument(expr, errmessage);
+	}
+	
+	public static void inBounds(int idx, int len, int size){
+		Requires.that(len >= 0, ToStringMapHelper.on("idx", "len", "size")
+				.message("len < 0", idx, len, size));
+		Preconditions.checkPositionIndexes(idx, idx+len, size);
+	}
+	public static void index(int idx, int size){
+		Preconditions.checkPositionIndex(idx, size);
+	}
+	public static void index(int idx1, int idx2, int size){
+		Preconditions.checkPositionIndexes(idx1, idx2, size);
 	}
 }
