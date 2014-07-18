@@ -1,4 +1,4 @@
-package com.zkieda.utils;
+package com.zkieda.utils.base;
 
 public final class ArrayUtils {
 	private ArrayUtils(){}
@@ -9,6 +9,7 @@ public final class ArrayUtils {
 	public static final short[] 	EMPTY_SHORT 	= {};
 	public static final byte[] 		EMPTY_BYTE  	= {};
 	public static final boolean[] 	EMPTY_BOOLEAN   = {};
+	public static final char[] 		EMPTY_CHAR      = {};
 	public static final float[] 	EMPTY_FLOAT 	= {};
 	public static final double[] 	EMPTY_DOUBLE 	= {};
 	public static final Object[] 	EMPTY_OBJECT 	= {};

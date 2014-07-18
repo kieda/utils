@@ -5,7 +5,7 @@ import java.util.Iterator;
 
 import com.google.common.base.Function;
 import com.google.common.collect.Iterators;
-import com.zkieda.utils.ArrayUtils;
+import com.zkieda.utils.base.ArrayUtils;
 import com.zkieda.utils.base.Functions;
 
 public class SimpleCollect<T> implements Collection<T>{

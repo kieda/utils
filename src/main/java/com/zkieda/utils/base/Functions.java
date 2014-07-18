@@ -19,6 +19,7 @@ public class Functions {
 			this.value = value;
 		}
 
+		@Override
 		public E apply(R from) {
 			return value;
 		}

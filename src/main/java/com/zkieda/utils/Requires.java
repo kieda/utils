@@ -3,7 +3,8 @@ package com.zkieda.utils;
 import java.util.Objects;
 
 import com.google.common.base.Preconditions;
-import com.zkieda.utils.tostring.ToStringMapHelper;
+import com.zkieda.utils.base.ArrayUtils;
+import com.zkieda.utils.tostring.ToStringArgs;
 
 public final class Requires {
 	private Requires(){}
@@ -31,6 +32,7 @@ public final class Requires {
 	public static void nonNull(Object... elems){
 		Objects.requireNonNull(ArrayUtils.contains(null, elems)?null:elems);
 	}
+	
 	public static void that(boolean expr){
 		Preconditions.checkArgument(expr);
 	}
@@ -39,8 +41,9 @@ public final class Requires {
 	}
 	
 	public static void inBounds(int idx, int len, int size){
-		Requires.that(len >= 0, ToStringMapHelper.on("idx", "len", "size")
-				.message("len < 0", idx, len, size));
+		Requires.that(len >= 0, ToStringArgs.message("len < 0")
+				.params("idx", "len", "size")
+				.vals(idx, len, size));
 		Preconditions.checkPositionIndexes(idx, idx+len, size);
 	}
 	public static void index(int idx, int size){
