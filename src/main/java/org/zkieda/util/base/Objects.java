@@ -3,7 +3,6 @@ package org.zkieda.util.base;
 import org.apache.commons.lang3.ObjectUtils;
 
 public class Objects {
-	
 	@SafeVarargs
 	public static <A> A firstNonNull(A... values){
 		return ObjectUtils.firstNonNull(values);
@@ -32,7 +31,8 @@ public class Objects {
 	public static boolean deepEquals(Object a, Object b){
 		return java.util.Objects.deepEquals(a, b);
 	}
-	public static <A> A retainIfSecondArgIsNull(A val, Object o){
+
+	public static <A>  A retainIfSecondArgIsNull(A val, Object o){
         return o==null?val:null;
     }
 }

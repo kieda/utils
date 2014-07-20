@@ -31,7 +31,7 @@ public class Functions {
 	public static <A> Function<A, Boolean> forPredicate(Predicate<A> predicate){
 		return predicate::test;
 	}
-	public static <K, V> Function<K, V> forMap(Map<K, V> map){
+	public static <K, V> Function<K, V> forMap(final Map<K, V> map){
 		return k -> {
 			V result = map.get(k);
 			Requires.thatArg(result != null || map.containsKey(k), 
@@ -39,7 +39,7 @@ public class Functions {
 			return result;
 		};
 	}
-	public static <K, V> Function<K, V> forMapWithDefault(Map<K, V> map, final V defaultVal){
+	public static <K, V> Function<K, V> forMapWithDefault(final Map<K, V> map, final V defaultVal){
 		return k -> {
 			final V result = map.get(k);
 			return (result != null || map.containsKey(k)) ? result : defaultVal; 

@@ -2,6 +2,7 @@ package org.zkieda.util.primitives;
 
 import org.junit.Assert;
 import org.junit.Test;
+import org.zkieda.util.primitives.PrimitiveUtils.Chars;
 
 public class CharsUnitTest {
 	/** 

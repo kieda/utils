@@ -38,9 +38,11 @@ public class CollectionUtils {
         }
         return temp;
     }
+	
 	public static <S> ArrayList<S> newArrayList(S... values){
 		return Lists.newArrayList(values);
     }
+	
 	public static <S> S[] toArray(S... vals){
 		return vals;
     }
