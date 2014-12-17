@@ -1,4 +1,4 @@
-zkieda-utils
+utils
 ============
 
 A utility library used for my various projects. Intended to be an extension of the google Guava and Apache libraries to give specific, additional functionality.
